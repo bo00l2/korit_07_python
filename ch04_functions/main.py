@@ -59,7 +59,7 @@ print() / type() / int() / float() / input()
 '''
 그렇다면 eng_name.upper()의 경우 .upper()가 메서드에 해당하고, 해당 메서드는 str 자료형에 종속되어있다고 볼 수 있겠습니다.
 그리고 그 결과값을 '다시 eng_name'이라는 변수에 담았기 때문에
-55번 라인의 결과값과 57번 라인의 결과값이 차이가 생겼네요.
+56번 라인의 결과값과 58번 라인의 결과값이 차이가 생겼네요.
 
 함수(메서드)의 유형
 '''
@@ -72,7 +72,7 @@ print() / type() / int() / float() / input()
 #     print('[ o | x ]')
 #     print(f'{unknown_parameter}라고 입력하셨나보네요')
 #
-# # 매개변수 x | 리턴 o
+# # 매개변수 x / 리턴 o
 # def call3():
 #     print('[ x | o ]')
 #     return 1
@@ -147,6 +147,8 @@ drink_price = 700
 def vending_machine(money):          # 이거 교재에 있는 무제 가지고 온건데 함수가 명사라는 점에서 별로 마음에 안듭니다.
     drink_price = 700
     for i in range(money // drink_price + 1):
+        # money // drink_price + 1 = 살 수 있는 음료수의 최대 개수
+        # 그리고 반복문을 돌 때 0부터 시작하기 때문에 +1을 해준거임
         print(f'음료수 개수 = {i}개, 잔돈 = {my_money - (drink_price * i)}')
 
 vending_machine(3000)
@@ -218,7 +220,3 @@ def multiyply2():
 multiyply2()
 
 # ch05_hangman -> hangman01
-
-
-
-

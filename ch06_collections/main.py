@@ -100,7 +100,7 @@ enhanced for문 형식으로 한 번 해서 첫 번째 element가 4가 되어야
     2. tuple 튜플
         저장된 값을 변경할 수 없는 list라고 생각하면 된다. 순서는 있기 때문에 index 넘버와 slicing은 가능하지만 저장된 값 이외에는 추가 / 수정 / 삭제가 불가능.
         
-        수괄호를 통해서 생성
+        소괄호를 통해서 생성
 '''
 # tu1 = (1,2,3)           # 튜플 생성 방법 # 1
 # tu2 = tuple((4,5,6))    # 튜플 생성 방법 # 2
@@ -212,7 +212,7 @@ element 추출 및 slicing은 동일하기 때문에 수업하지 않는다.
 # print(type(dict1.keys())) # 결과값 : <class 'dict_keys'>
 
 # value들만 추출하는 메서드
-# print(dict1.values())       # 결과값 : dict_values(['김일', 20, ['서울특벽시', '마포구', '목동']])
+# print(dict1.values())       # 결과값 : dict_values(['김일', 20, ['서울특별시', '마포구', '목동']])
 # print(type(dict1.values())) # 결과값 : <class 'dict_values'>
 
 # key들만 뽑아서 list를 만든다든지 / value들만 뽑아서 list를 만들고 싶다면 형변환 함수를 사용해야 함.
@@ -497,3 +497,15 @@ def count_even_odd3(numbers):
     print(f'홀수의 개수 : {len(numbers)-len(evens)}')
 
 count_even_odd3([1,2,3,4,5,6,7,8,9,10])
+
+
+# 실기 시험 문제 1번 연습 완
+
+for i in range(2):
+    phone_num = input('전화번호를 입력하시오 >>> ')
+
+    if len(phone_num) == 13:
+        print(f'전화번호의 중간 4자리는 {phone_num[4:8]}입니다.')
+    else:
+        print('유효하지 않은 전화번호 형식입니다.')
+
