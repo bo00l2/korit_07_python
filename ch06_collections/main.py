@@ -458,54 +458,133 @@ count_even_odd([1,2,3,4,5,6,7,8,9,10])
 '''
 
 # 함수 정의 영역
-def count_even_odd(numbers):
-    even_count = 0
-    odd_count = 0
+# def count_even_odd(numbers):
+#     even_count = 0
+#     odd_count = 0
+#
+#     for number in numbers:
+#         if number % 2 == 0:
+#             even_count += 1
+#         else:
+#             odd_count += 1
+#     print(f'짝수의 개수 : {even_count}개')
+#     print(f'홀수의 개수 : {odd_count}개')
+#
+# # 함수 호출 영역
+# count_even_odd([1,2,3,4,5,6,7,8,9,10])
+#
+# def count_even_odd2(numbers):
+#     evens = []
+#     odds = []
+#     for number in numbers:
+#         if number % 2 == 0:
+#             evens.append(number)
+#         else:
+#             odds.append(number)
+#     print(f'짝수의 개수 : {len(evens)}')
+#     print(f'홀수의 개수 : {len(odds)}')
+#
+# count_even_odd2([1,2,3,4,5,6,7,8,9,10])
+#
+# def count_even_odd3(numbers):
+#     evens = []
+#
+#     for number in numbers:
+#         if number % 2 == 0:
+#             evens.append(number)
+#
+#     print(f'짝수의 개수 : {len(evens)}')
+#     print(f'홀수의 개수 : {len(numbers)-len(evens)}')
+#
+# count_even_odd3([1,2,3,4,5,6,7,8,9,10])
 
-    for number in numbers:
-        if number % 2 == 0:
-            even_count += 1
-        else:
-            odd_count += 1
-    print(f'짝수의 개수 : {even_count}개')
-    print(f'홀수의 개수 : {odd_count}개')
 
-# 함수 호출 영역
-count_even_odd([1,2,3,4,5,6,7,8,9,10])
+# 실기 시험 문제 1번 연습 및 작성완료
 
-def count_even_odd2(numbers):
-    evens = []
-    odds = []
-    for number in numbers:
-        if number % 2 == 0:
-            evens.append(number)
-        else:
-            odds.append(number)
-    print(f'짝수의 개수 : {len(evens)}')
-    print(f'홀수의 개수 : {len(odds)}')
+# for i in range(2):
+#     phone_num = input('전화번호를 입력하시오 >>> ')
+#
+#     if len(phone_num) == 13:
+#         print(f'전화번호의 중간 4자리는 {phone_num[4:8]}입니다.')
+#     else:
+#         print('유효하지 않은 전화번호 형식입니다.')
 
-count_even_odd2([1,2,3,4,5,6,7,8,9,10])
+# 실기 2 번 작성중
+# 평균만 구해지면 됨
+class Student:
+    def __init__(self, name, student_id):
+        self.name = name
+        self.student_id = student_id
+        self.grade = {}
 
-def count_even_odd3(numbers):
-    evens = []
+    def add_grade(self, subject, score):
+        self.grade[subject] = score
 
-    for number in numbers:
-        if number % 2 == 0:
-            evens.append(number)
-
-    print(f'짝수의 개수 : {len(evens)}')
-    print(f'홀수의 개수 : {len(numbers)-len(evens)}')
-
-count_even_odd3([1,2,3,4,5,6,7,8,9,10])
+    def get_average_grade(self):
+        sum = 0
+        sum += self.grade.values()
+        avg = float(sum / len(self.grade))
+        return avg
 
 
-# 실기 시험 문제 1번 연습 완
+student0 = Student('김일', 2025001)
+student0.add_grade('국어', 100)
+student0.add_grade('수학', 90)
+student0.add_grade('영어', 80)
 
-for i in range(2):
-    phone_num = input('전화번호를 입력하시오 >>> ')
+print(f'학생 이름 : {student0.name}')
+print(f'평균 성적 : {student0.get_average_grade()} 점')
 
-    if len(phone_num) == 13:
-        print(f'전화번호의 중간 4자리는 {phone_num[4:8]}입니다.')
-    else:
-        print('유효하지 않은 전화번호 형식입니다.')
 
+
+# 실기 3번 작성완료
+num_list = []
+# num_plus = 0
+# # num_minus = 0
+# # num_zero = 0
+# #
+# # number = int(input('몇 개의 숫자를 입력할까요? >>> '))
+# # for i in range(number):
+# #     num = int(input(f'{i+1}번째 숫자를 입력하세요 >>> '))
+# #     num_list.append(num)
+# #     if num % 2 == 0 and num != 0:
+# #         num_plus += 1
+# #     if num < 0:
+# #         num_minus += 1
+# #     if num == 0:
+# #         num_zero += 1
+# #
+# # print(f'양수 : {num_plus}개')
+# # print(f'음수 : {num_minus}개')
+# # print(f'0 : {num_zero}개')
+
+
+
+# 실기 4번
+# candidates = []
+# vote_numbers = 0
+# votes = {}
+# vote = 0
+# num = 0
+#
+# person = int(input('후보자 수를 입력하시오 >>> '))
+#
+# for i in range(person):
+#     name = input(f'{i+1}번째 후보자의 이름을 입력하시오 >>> ')
+#     vote_numbers = (i+1)
+#     candidates.append(name)
+#     votes[vote_numbers] = name
+#
+#
+# count = int(input('전체 투표 횟수를 입력하시오 >>> '))
+# for i in range(count):
+#     vote = int(input(f'{i+1}번째 투표 {votes} >>> '))
+#     if vote == vote_numbers:
+#         num += 1
+#
+#
+# print('--- 투표 결과 ---')
+#
+# # 투표 결과만 하면 끝남
+# for i in range(person):
+#     print(f'{candidates[i]}: {num}표')
