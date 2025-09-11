@@ -202,6 +202,12 @@ print(f'매출 : {Shop.get_total()}원')
 class Shop:
     total = 0
     menu_list = [{'떡볶이': 3000}, {'순대': 4000}, {'튀김': 500}, {'김밥': 2000}]
+    menu_dict = {
+        '떡볶이': 3000,
+        '순대':4000,
+        '튀김':500,
+        '김밥':2000,
+    }
 
     @classmethod
     def get_total(cls):
@@ -214,8 +220,27 @@ class Shop:
             for key in dic:
                 if key == food:
                     cls.total += (dic[food] * sel)
+            # 강사 코드
+            # if food in dic :    # 딕셔너리 내에 pair 하나 밖에 없는 상태인데, 있으면 이하의 코드라인이 실행되고 아니면 넘어간다. 그러면 다음 반복으로 가겠네.
+            #     # in -> element 기준으로 해야 하기 때문에 dictionary의 element 중 'key'를 기준
+                  # 애초에 key 없으면 value를 조회 못하는데 dictionary의 특징 중 하나
+            #     cls.total += (dic[food] * sel)
+
+    @classmethod
+    def sales2(cls, food2, sel2):
+        print(f'{food2}을(를) {sel2} 개 판매')
+        if food2 in cls.menu_dict: # 그러면 굳이 반복문 다 돌려서 일치하는 key가 있는지 확인할 필요가 없다.
+            cls.total += (cls.menu_dict[food2] * sel2)
+
 
 Shop.sales('떡볶이', 1)
 Shop.sales('김밥', 2)
 Shop.sales('튀김', 5)
 print(f'매출 : {Shop.get_total()}원')
+
+Shop.sales2('떡볶이', 1)
+Shop.sales2('김밥', 2)
+Shop.sales2('튀김', 5)
+print(f'추가 매출 : {Shop.get_total()}원')
+
+# ch10_prettytable
