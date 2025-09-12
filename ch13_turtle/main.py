@@ -101,11 +101,39 @@ colors = [
 #     t.left(360/n)
 
 # 여러 개의 도형을 그리고 싶다면 도형을 그리는 반복문을 반복 -> 중첩 for
-
 # for i in range(3, 11):
 #     for _ in range(i):
 #         t.forward(100)
 #         t.left(360/i)
+
+# 근데 도형 그릴 때마다 반복문 쓰는거 너무 짜증나니까 그냥 함수를 정의합시다
+def draw_shape(n):
+    for _ in range(n):
+        t.forward(100)
+        t.left(360/n)
+    t.color(random.choice(colors))
+
+def draw_dotted_line():
+    for _ in range(10):
+        t.forward(5)
+        t.penup()
+        t.forward(5)
+        t.pendown()
+
+def draw_dotted_shape(n):
+    for _ in range(n):
+        draw_dotted_line()
+        t.left(360/n)
+    t.color(random.choice(colors))
+
+# t.speed(0)
+#
+# for i in range(3, 11):
+#     draw_dotted_shape(i)
+
+
+# for i in range(3, 11):
+#     draw_shape(i)
 
 # t.forward(100)
 # print(t.heading())
